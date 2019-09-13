@@ -1,0 +1,51 @@
+
+
+
+ <h2><%=@month.name%> transactions</h2>
+ <table class=table>
+  <tr>
+   <th>  ID</th>
+    <th>DESCRIPTION</th>
+   <th>  AMOUNT </th>
+   <th>  MONTH </th>
+   <th >    CATEGORY</th>
+    <th >    CREATED_AT</th>
+  </tr>
+  
+  <% @month.transactions.each do |month|%>
+   
+  
+  <tr> <% if current_user.id==month.user_id%>
+   <td> <%=month.id%> </td>
+  <td> <%=month.description%> </td>
+  
+  <td> $<%=month.amount%> </td>
+    
+  <td>   <%=month.month.name %></td>
+      
+  <td>  <%=month.category.name %> </td>
+   
+   <td>  <%=month.created_at%> </td>
+   <%end %> 
+ </tr>
+ <%end %> 
+
+ </table>
+ 
+ 
+ 
+ 
+ 
+ <% @month.transactions.each do|month| %>
+ <% if current_user.id==month.user_id%>
+   <%if month.amount%>
+   
+  <P><%@total=month.amount + @total %></P>
+  
+  <%else %>
+  
+  <%end %>
+ <% end %>
+<% end %>
+
+ <P>the total expenses for this month:$<%=@total%></P>

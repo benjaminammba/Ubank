@@ -1,0 +1,65 @@
+<h1>Here are all your income to date  </h1>
+
+
+ 
+ 
+ 
+ 
+  <table class=table>
+  <tr>
+   <th>  ID</th>
+    <th>DESCRIPTION</th>
+   <th>  AMOUNT </th>
+   <th>  MONTH </th>
+    <th >    CREATED_AT</th>
+    <th>  UPDATE </th>
+        <th>  DELETE </th>
+  </tr>
+  
+  <% @user.incomes.each do |income|%>
+
+  
+  <tr>
+   <td> <%=income.id%> </td>
+   
+  <td> <%=income.description%> </td>
+  
+  <td> $<%=income.amount%> </td>
+    
+  <td>   <%=income.month.name %></td>
+  
+   <td>  <%=income.created_at%> </td>
+   
+    <td>  <a href="/incomes/<%=income.id%>">update</a></td>
+    
+    <td>  <%= form_tag "/incomes/#{income.id}",method:"delete" do  %>
+          <input type="submit" value="delete" />
+          <%end%>
+    </td>
+ </tr>
+ <%end %> 
+
+ </table>
+<% @total=0%>
+ 
+<% @user.incomes.each do |income|%> 
+
+   <% @total=@total+income.amount%> 
+   
+ <%end %> 
+ 
+ 
+<P>the total income made is:$<%= @total %> </P> 
+
+
+ 
+ 
+
+<ul>
+
+ <li><%=link_to "new income? ",new_income_path %></li>
+  <li><%=link_to "click to see your monthly income? ",income_by_month_path %></li>
+   
+ 
+</ul>
+

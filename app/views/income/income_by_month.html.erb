@@ -1,0 +1,6 @@
+<h1>Choose a Month to see the income you made  that month </h1>
+
+  <% @month.each do|month|%>
+  
+  <P><a href="/monthly_income/<%=month.id%>"><%= month.name %></a></P>
+  <%end %>

@@ -1,0 +1,57 @@
+<h1>here is a monthly balance of our bank </h1>
+
+
+  <table class=table>
+      
+      <tr>
+          <th>MONTH</th>
+           <th>INCOME</th>
+            <th>EXPENSES</th>
+             <th>REST</th>
+             
+      </tr>
+      
+     
+        <% @month.each do|month| %>
+      <tr>
+         
+         
+  
+          
+               <td> <%=month.name%>  </td>
+               
+                <td>  $<%=month.month_total_income(month)%>  </td>
+              
+               <td>  $<%=month.month_total_expense(month)%>  </td>
+       
+                <td> $<%=  month.month_rest(month)  %> </td> 
+              
+          
+         
+       
+      </tr>
+     
+      <%end  %>
+      
+     
+      
+      
+  </table>
+
+  
+  <P>total income : $<%= @income. income_by_month%></P>
+  <P> total expenses : $<%= @expenses.total_transaction%></P>
+   <P>difference : $<%= @income. income_by_month - @expenses.total_transaction%></P>
+  
+  <P>cv            </P>
+  <P>          </P>
+   <P>      </P>
+  
+  <%= line_chart @month.each{ |goal|
+  
+    {month: goal.name, data: goal.month_total_income(goal)}
+} %>
+  
+  <P>total income : $<%= @income. income_by_month%></P>
+  <P> total expenses : $<%= @expenses.total_transaction%></P>
+   <P>difference : $<%= @income. income_by_month - @expenses.total_transaction%></P>

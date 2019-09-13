@@ -1,0 +1,176 @@
+@import "bootstrap";
+
+body {
+  padding-top: 60px;
+
+}
+.home,h1{
+    color: white;
+}
+.home,h2{
+    color: white;
+}
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: white;
+}
+
+p {
+  float: center;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/* footer */
+
+
+
+th{
+  text-align:left
+}
+table,th,td{
+  
+  border_collapse:collapse
+  
+}
+
+
+.form-group input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+.form-group {
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.footer  {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:black;
+  color:white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+.footer-location ul li {
+  
+display:block;
+color: black;
+padding-bottom: 7px;
+font-size: 25px;
+font-family: Arial, Helvetica, sans-serif;
+padding-right: 10px;
+text-align: center
+}
+
+.month_list{
+   margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+.category_list{
+   margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+form {
+  text-align: center;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  
+  
+}
+.session{
+  text-align: center;
+}
+.actions{
+  
+   
+}
+body {
+  background-image: url("142225.jpg");
+}

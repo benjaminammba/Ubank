@@ -1,0 +1,28 @@
+
+
+<div class="form-group">
+<%= form_tag "/new_income",method:"post" do  %>
+
+ <label for="sname">amount</label>
+ <input type="text" name="amount"  placeholder="amout" />
+ 
+ 
+ <label for="sname">description</label>
+ 
+ <input type="text" name="description" placeholder="description"/>
+
+ <label for="sname">month</label>
+   <select name="month_id"
+    
+   <%= @month.each do |month|%>
+  <option value="<%= month.id %>">  <%=month.name%>  </option>
+   <%end%>
+    
+ </select>
+ 
+ 
+
+ <input type="submit" value="ajout " />
+
+
+</div>

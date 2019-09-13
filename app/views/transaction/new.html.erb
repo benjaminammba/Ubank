@@ -1,0 +1,42 @@
+<h1>Create a new expense </h1>
+
+
+
+<%= form_tag "/new_expenses",method:"post" do  %>
+
+<div class="form-group">
+     <label for="fname">amount</label>
+     <input type="text" name="amount" placeholder="amout"/>
+     
+     <label for="sname">description</label>
+     <input type="text" name="description" placeholder="description"/>
+
+      <label for="sname">month</label>
+      <select name="month_id">
+    
+    
+                <%= @month.each do |month|%>
+                   <option value="<%= month.id %>">  <%=month.name%>  </option>
+                    <%end%>
+                 
+                </select>
+ 
+       <label for="sname">category</label>
+       <select name="category_id">
+    
+                <%= @category.each do |category|%>
+                
+               <option value="<%=category.id %>">  <%=category.name%>  </option>
+               
+                <%end%>
+      
+                  </select>
+ 
+ 
+ <input type="submit" value="ajout " />
+
+
+</form>
+</div>
+
+<% end %>

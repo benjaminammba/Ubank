@@ -1,0 +1,31 @@
+
+<div class="center jumbotron">
+ 
+<h1>Welcome to your personalise Bank:<%= current_user.username%> </h1>
+<h2>choose what kind of transaction would you like to pass </h2>
+
+</div>
+
+
+
+<div class="footer-location">
+ 
+ 
+<ul  class="list-group">
+ 
+ <li class="list-group-item"><%=link_to "ADD A NEW EXPENSE" ,new_expenses_path %></li>
+ <li class="list-group-item"><%=link_to "ALL YOUR EXPENSES",all_expense_path %></li>
+ <li class="list-group-item"><%=link_to "ADD A NEW INCOME",new_income_path %></li>
+  <li class="list-group-item"><%=link_to"ALL YOUR INCOMES",all_income_path %></li>
+  
+   <li class="list-group-item"><%=link_to "EXPENSES BY TYPE",transaction_type_path %></li>
+ <li class="list-group-item"><%=link_to "INCOME BY TYPE",income_by_month_path %></li>
+ 
+  <li class="list-group-item"><%=link_to "BANK OVER-VIEUW",expense_income_sheet_path %></li>
+ 
+
+ 
+</ul>
+
+</div>
+

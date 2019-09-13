@@ -1,0 +1,60 @@
+<table class=table>
+    
+    
+    <tr>
+        <th>AMOUNT</th>
+        <th>DESCRIPTION</th>
+        <th>MONTH</th>
+        <th>CATEGORY</th>
+    </tr>
+    
+    <tr>
+   <td><%=@transaction.amount %></td>
+   <td><%=@transaction.description%></td>
+   <td><%=@transaction.month.name%></td>
+   <td><%=@transaction.category.name%></td>
+
+    </tr>
+
+
+</table>
+<H1>UPDATE THIS EXPENSE </H1>
+<%= form_tag "/expenses/",method:"patch" do  %>
+
+
+<div class="form-group">
+
+     <P>amount:<input type="text" name="amount" /></P>
+ 
+     <P>description:<input type="text" name="description" /></P>
+
+
+      <P>month: <select name="month_id">
+    
+    
+                <%= @month.each do |month|%>
+                   <option value="<%= month.id %>">  <%=month.name%>  </option>
+                    <%end%>
+                 </P>
+                </select>
+ 
+ 
+       <P>category: <select name="category_id">
+    
+                <%= @category.each do |category|%>
+                
+               <option value="<%=category.id %>">  <%=category.name%>  </option>
+               
+                <%end%>
+       </P>
+                  </select>
+ 
+ <P>
+ <input type="submit" value="ajout " />
+</P>
+
+</form>
+</div>
+
+
+<% end %>

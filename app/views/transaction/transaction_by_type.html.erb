@@ -1,0 +1,26 @@
+<h1> select the month or the category  you would like to see the transaction </h1>
+
+<div class=month_list> 
+<h3> MONTH </h3>
+<% @month.each do |month| %>
+
+<ul>
+  <li>  <a href="/monthly/<%=month.id%>"><%= month.name %></a></li>
+ 
+</ul> 
+  <%end%>
+</div>
+ 
+ 
+ <div class=category_list> 
+ 
+<h3> CATEGORY </h3>
+ <% @category.each do |category| %>
+   <ul>
+      <li>  <a href="/category/<%=category.id%>"><%= category.name %></a> </li> 
+ 
+   </ul> 
+  <%end%>
+  </div>
+  
+ 

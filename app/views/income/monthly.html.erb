@@ -1,0 +1,25 @@
+<h1>ALL YOUR INCOME MONTHLY</h1>
+
+<h2><%= @month.name%></h2>
+
+
+<% @month.incomes.each do |income|%> 
+ <tr> <% if current_user.id==income.user_id%>
+   <p> amount: <%= income.amount %>,description:<%= income.description%>,month:<%= income.month.name %> 
+   <%end%>
+ <%end %> 
+ 
+ 
+ <% @month.incomes.each do|trans| %>
+  <tr> <% if current_user.id==trans.user_id%>
+   <%if trans.amount%>
+   
+  <P><%@total=trans.amount + @total %></P>
+  
+  <%else %>
+  
+  <%end %>
+ <% end %>
+<% end %>
+
+ <P>the total amount of this month :<%=@total%></P>

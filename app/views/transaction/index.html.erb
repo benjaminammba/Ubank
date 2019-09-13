@@ -1,0 +1,87 @@
+
+
+
+<body>
+<h1>Here are all the expenses to date </h1>
+
+
+
+
+
+ <table class=table>
+  <thead class="thead-dark">
+    <tr>
+  
+
+   <th>  ID</th>
+    <th>DESCRIPTION</th>
+   <th>  AMOUNT </th>
+   <th>  MONTH </th>
+   <th >    CATEGORY</th>
+    <th >    CREATED_AT</th>
+     <th>  UPDATE </th>
+        <th>  DELETE </th>
+   </tr>
+ 
+ </thead>
+
+  <% current_user.transactions.each do|trans| %>
+  
+ 
+   
+  <tr>
+   
+   
+   <td> <%=trans.id%> </td>
+  <td> <%=trans.description%> </td>
+  
+  <td> $<%=trans.amount%> </td>
+    
+  <td>   <%=trans.month.name %></td>
+      
+  <td>  <%=trans.category.name %> </td>
+   
+   <td>  <%=trans.created_at%> </td>
+    <td>  <a href="/expenses/<%=trans.id%>">update</a></td>
+    
+      <td>  <%= form_tag "/expenses/#{trans.id}",method:"delete" do  %>
+          <input type="submit" value="delete" />
+          <%end%>
+  
+   
+    </td>
+  
+ </tr>
+  
+<%end %> 
+ </table>
+ 
+
+  <% current_user.transactions.each do|trans| %>
+
+   <%if trans.amount%>
+   
+  <P><%@total=trans.amount + @total %></P>
+  
+  <%else %>
+  
+ 
+  <%end %>
+<% end %>
+
+
+<div=expenses.total>
+ 
+ <P>all expenses total :$<%=@total%></P>
+</div>
+
+
+
+<ul>
+ <li><%=link_to "expense by category ",transaction_type_path %></li>
+ <li><%=link_to "new expense? ",new_expenses_path %></li>
+ 
+</ul>
+
+
+</body>

@@ -1,0 +1,62 @@
+<h1>this page will show all the transaction by category</h1>
+
+<h1><%= @category.name%></h1>
+
+
+
+
+<table class=table>
+  <tr>
+   <th>  ID</th>
+    <th>DESCRIPTION</th>
+   <th>  AMOUNT </th>
+   <th>  MONTH </th>
+   <th >    CATEGORY</th>
+    <th >    CREATED_AT</th>
+  </tr>
+  
+  
+  <% @category.transactions.each do |category|%>
+ 
+   
+
+
+  <tr>
+   
+    <% if current_user.id==category.user_id%>
+    
+   <td> <%=category.id%> </td>
+  <td> <%=category.description%> </td>
+  
+  <td> $<%=category.amount%> </td>
+    
+  <td>   <%=category.month.name %></td>
+      
+  <td>  <%=category.category.name %> </td>
+   
+   <td>  <%=category.created_at%> </td>
+   <%end %> 
+ </tr>
+ 
+<%end %> 
+ </table>
+ 
+ 
+ 
+ 
+ 
+ 
+ <% @category.transactions.each do|trans| %>
+  <% if current_user.id==c=trans.user_id%>
+   <%if trans.amount%>
+   
+  <P><%@total=trans.amount + @total %></P>
+  
+  <%else %>
+  
+  <%end %>
+ <% end %>
+<% end %>
+
+ <P>the total amount of this category is :$<%=@total%></P>
+  
